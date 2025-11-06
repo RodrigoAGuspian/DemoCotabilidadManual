@@ -1,0 +1,653 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@plugin "tailwindcss-primeui";
+
+/* Open Sans */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../public/fonts/OpenSans/OpenSans-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../public/fonts/OpenSans/OpenSans-SemiBold.woff2") format("woff2");
+}
+/* Open Sans Bold */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../public/fonts/OpenSans/OpenSans-Bold.woff2") format("woff2");
+}
+/* Open Sans SemiBold */
+/* Titillium Web */
+@font-face {
+  font-family: "Titillium Web";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../public/fonts/TitilliumWeb/titillium-web-v18-latin-regular.woff2")
+    format("woff2");
+}
+/* Titillium Web Bold */
+@font-face {
+  font-family: "Titillium Web";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../public/fonts/TitilliumWeb/titillium-web-v18-latin-700.woff2")
+    format("woff2");
+}
+/* Titillium Web SemiBold */
+@font-face {
+  font-family: "Titillium Web";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../public/fonts/TitilliumWeb/titillium-web-v18-latin-600.woff2")
+    format("woff2");
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+@theme {
+  /* Color | Principales */
+  --color-primary: #000066;
+  --color-light: #5056ac;
+  --color-dark: #07184a;
+  --color-secondary: #9d0311;
+  --color-secondary-light: #db141c;
+  --color-secondary-dark: #690007;
+
+  /* Color | Destacados */
+  --color-error: #ff6d0a;
+  --color-tertiary: #1d72d3;
+  --color-security: #e0e0ff;
+  --color-accessibility: #249300;
+  --color-neutral-hover: #f6f6f6;
+  --color-neutral-text: #690007;
+
+  /* Color | Complementarios */
+  --color-complementary-purple: #4c19af;
+  --color-complementary-blue: #002a9e;
+  --color-complementary-blue-light: #0051c6;
+  --color-complementary-cyan: #16a8e1;
+  --color-complementary-teal: #04b2b5;
+  --color-complementary-green: #249337;
+  --color-complementary-olive-green: #8cbb22;
+  --color-complementary-red: #e52724;
+  --color-complementary-orange: #ec6c1f;
+  --color-complementary-gold: #f8ae15;
+
+  /* Color | Paletas tonales | Color primario */
+  --color-primary-0: #000000;
+  --color-primary-10: #030567;
+  --color-primary-20: #1e257b;
+  --color-primary-25: #2b3186;
+  --color-primary-30: #373d92;
+  --color-primary-35: #43499f;
+  --color-primary-40: #5056ab;
+  --color-primary-50: #6970c7;
+  --color-primary-60: #828ae3;
+  --color-primary-70: #9da3fe;
+  --color-primary-80: #bec2ff;
+  --color-primary-90: #e0e0ff;
+  --color-primary-95: #f2efff;
+  --color-primary-98: #fbf8ff;
+  --color-primary-99: #fffbff;
+  --color-primary-100: #ffffff;
+
+  /* Color | Paletas tonales | Color secundario */
+  --color-secondary-10: #420003;
+  --color-secondary-20: #690007;
+  --color-secondary-25: #7c0109;
+  --color-secondary-30: #92010e;
+  --color-secondary-35: #a60e17;
+  --color-secondary-40: #b82021;
+  --color-secondary-50: #db3a35;
+  --color-secondary-60: #ff554c;
+  --color-secondary-70: #fe897f;
+  --color-secondary-80: #ffb4ab;
+  --color-secondary-90: #ffdad6;
+  --color-secondary-95: #ffedea;
+  --color-secondary-98: #fff8f7;
+
+  /*Color | Paletas tonales |Color terciario*/
+  --color-tertiary-10: #001b3d;
+  --color-tertiary-20: #003062;
+  --color-tertiary-25: #013b76;
+  --color-tertiary-30: #01468b;
+  --color-tertiary-35: #0053a0;
+  --color-tertiary-40: #005db5;
+  --color-tertiary-50: #2577d8;
+  --color-tertiary-60: #4991f4;
+  --color-tertiary-70: #78acff;
+  --color-tertiary-80: #a9c8ff;
+  --color-tertiary-90: #d6e2ff;
+  --color-tertiary-95: #ecf0ff;
+  --color-tertiary-98: #f9f9fe;
+
+  /* Color | Paletas tonales | Colores neutros*/
+  --color-neutral-10: #1b1b23;
+  --color-neutral-20: #303038;
+  --color-neutral-25: #3b3b43;
+  --color-neutral-30: #46464f;
+  --color-neutral-35: #52515b;
+  --color-neutral-40: #5e5d67;
+  --color-neutral-50: #928f9a;
+  --color-neutral-60: #adaab4;
+  --color-neutral-70: #c8c5d0;
+  --color-neutral-80: #e4e1ec;
+  --color-neutral-90: #f2effa;
+  --color-neutral-95: #fbf8ff;
+  --color-neutral-98: #fffbff;
+
+  /* Color | Paletas tonales | Color de Error */
+  --color-error-5: #240a00;
+  --color-error-10: #361000;
+  --color-error-15: #461800;
+  --color-error-20: #561f01;
+  --color-error-25: #682700;
+  --color-error-30: #793100;
+  --color-error-35: #8d3800;
+  --color-error-40: #a04200;
+  --color-error-50: #c85200;
+  --color-error-60: #f26500;
+  --color-error-70: #ff8c52;
+  --color-error-80: #feb693;
+  --color-error-90: #ffdbcc;
+  --color-error-95: #ffede6;
+  --color-error-98: #fff8f6;
+
+  /* Botones | Clasificación */
+  --color-button-primary: var(--color-primary);
+  --color-button-primary-hover: var(--color-light);
+  --color-button-primary-pressed: var(--color-primary-60);
+  --color-button-primary-disabled: var(--color-neutral-70);
+
+  /* Botón secundario */
+  --color-button-secondary: #5056ac00;
+  --color-button-secondary-hover: #5056ac33;
+  --color-button-secondary-pressed: #828ae380;
+  --color-button-secondary-disabled: var(--color-neutral-70);
+
+  /* Botón terciario */
+  --color-button-tertiary: #5056ac00;
+  --color-button-tertiary-hover: #5056ac33;
+  --color-button-tertiary-pressed: #828ae380;
+  --color-button-tertiary-disabled: var(--color-neutral-70);
+
+  /* Botón Sidebar */
+  --color-button-sidebar: var(--color-primary);
+  --color-button-sidebar-hover: var(--color-primary-60);
+  --color-button-sidebar-selected: var(--color-light);
+
+  /* Notificaciones | Confirmación */
+  --color-notification-success-container: #d8efd1;
+  --color-notification-success-border: var(--color-complementary-green);
+  --color-notification-success-title: var(--color-complementary-green);
+  --color-notification-success-text: #103717;
+
+  /* Notificación | Informativo */
+  --color-notification-info-container: #d6e2ff;
+  --color-notification-info-border: var(--color-tertiary-35);
+  --color-notification-info-title: var(--color-tertiary-35);
+  --color-notification-info-text: var(--color-tertiary-20);
+
+  /* Notificación | Error */
+  --color-notification-error-container: #ffdbcc;
+  --color-notification-error-border: var(--color-error-35);
+  --color-notification-error-title: var(--color-error-35);
+  --color-notification-error-text: var(--color-error-10);
+  /* Notificación | Seguridad */
+  --color-notification-security-container: var(--color-security);
+  --color-notification-security-border: var(--color-primary-30);
+  --color-notification-security-title: var(--color-primary-30);
+  --color-notification-security-text: var(--color-primary-20);
+  /* Extras */
+  --color-breadcrumb: #a7a6b0;
+
+  --font-family-sans: "Open Sans", sans-serif;
+  --font-family-titillium: "Titillium Web", sans-serif;
+
+  --spacing: 1px;
+}
+
+/* Botón principal */
+.p-button {
+  background-color: var(--color-button-primary) !important;
+  border-color: var(--color-button-primary) !important;
+  color: white !important;
+  border-radius: 25px !important;
+  padding: 11px 20px !important;
+}
+
+.p-button-label {
+  font-family: var(--font-family-sans) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+}
+
+.p-button:hover {
+  background-color: var(--color-button-primary-hover) !important;
+}
+
+.p-button:disabled {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: white !important;
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+/* Botón secundario */
+.p-button.p-button-secondary {
+  background-color: var(--color-button-secondary) !important;
+  border-color: var(--color-button-secondary) !important;
+  color: var(--color-primary) !important;
+  border: 1px solid var(--color-button-primary) !important;
+}
+
+.p-button.p-button-secondary:hover {
+  background-color: var(--color-button-secondary-hover) !important;
+}
+
+.p-button.p-button-secondary:disabled {
+  background-color: var(--color-button-secondary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+/*Estilos personalizados para la seccion del formulario de catalogo de cuentas*/
+.account-section {
+  @apply relative  bg-white shadow-md rounded-lg px-6 py-10 mb-16 grid grid-cols-1 sm:grid-cols-2 gap-4;
+  /*@apply relative border border-gray-400 rounded-md p-10 grid grid-cols-1 sm:grid-cols-2 items-center mt-6;*/
+}
+
+.input-base {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition duration-150 ease-in-out;
+}
+
+.error-message {
+  color: var(--color-error);
+  @apply text-xs mt-1 ml-3;
+}
+
+.floating-label {
+  @apply absolute left-6 -top-12 bg-transparent rounded-md px-1.5 text-blue-950;
+}
+
+.delete-button {
+  @apply bg-red-500 hover:bg-red-700 text-white font-bold py-0.5 px-0.5 rounded-full flex items-center border;
+}
+
+.field-wrapper {
+  @apply w-full flex sm:w-auto;
+}
+
+.select-base {
+  /* Estilo base para ng-select similar a input-base */
+  @apply px-3 py-2 border border-gray-300 rounded-md shadow-sm
+    focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900
+    transition duration-150 ease-in-out;
+}
+
+.select-option {
+  @apply py-2 px-4 bg-white text-gray-800 cursor-pointer transition-all duration-150 rounded-md;
+
+  &:hover {
+    @apply bg-blue-950 text-white;
+  }
+}
+
+::ng-deep .ng-dropdown-panel {
+  @apply mt-2 shadow-lg border border-gray-300 rounded-lg z-50;
+}
+
+/* Estilo base del dropdown de PrimeNG */
+.dropdown-custom {
+  @apply w-full max-h-40 px-3 py-2 border border-gray-300 rounded-md shadow-sm
+    focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900
+    transition duration-150 ease-in-out text-gray-800 font-normal;
+}
+
+/* Para el contenido de la lista desplegable */
+::ng-deep .p-dropdown-panel {
+  @apply mt-2 border border-gray-300 rounded-md shadow-lg z-50 bg-white;
+}
+
+/* Estilo del item seleccionado */
+::ng-deep .p-dropdown .p-dropdown-label {
+  @apply text-gray-800 text-sm font-normal;
+}
+
+/* Items individuales */
+::ng-deep .p-dropdown-item {
+  @apply px-4 py-2 text-sm text-gray-800 hover:bg-blue-900 hover:text-white cursor-pointer;
+}
+
+/* Icono del dropdown */
+::ng-deep .p-dropdown .p-dropdown-trigger {
+  @apply text-gray-500;
+}
+
+.section-title {
+  @apply text-xl font-semibold  text-blue-950 mb-6;
+}
+
+.label-title {
+  @apply block mb-1 text-sm font-sans text-blue-950;
+}
+
+/* --- Estilos para el panel desplegable y las opciones --- */
+
+/* Panel desplegable (la caja con las opciones) */
+.p-dropdown-panel {
+  background-color: var(--color-primary-100);
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem; /* rounded-md */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-lg */
+}
+
+/* Panel desplegable (la caja con las opciones) */
+.p-dropdown-panel {
+  background-color: var(--color-primary-100);
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem; /* rounded-md */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-lg */
+}
+
+/* Cada opción individual en la lista */
+.p-dropdown-panel .p-dropdown-item {
+  font-family: var(--font-family-sans);
+  font-size: 14px;
+  color: var(--color-neutral-10);
+  padding: 10px 12px;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+/* Opción en estado HOVER o FOCUS (marcada con el teclado) */
+.p-dropdown-panel .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover,
+.p-dropdown-panel .p-dropdown-item:not(.p-highlight):not(.p-disabled):focus {
+  background-color: var(
+    --color-primary-90
+  ) !important; /* Tu color --color-primary-90 (E0E0FF) */
+  color: var(--color-primary) !important;
+}
+
+/* Opción que ya está seleccionada (marcada como p-highlight) */
+.p-dropdown-panel .p-dropdown-item.p-highlight {
+  background: var(--color-primary) !important;
+  color: var(--color-primary-100) !important; /* Texto blanco */
+  font-weight: 600; /* SemiBold */
+}
+
+/* Quitar el outline azul por defecto del navegador en las opciones */
+.p-dropdown-panel .p-dropdown-item:focus {
+  box-shadow: none !important;
+}
+
+/* Mensaje de "No se encontraron resultados" */
+.p-dropdown-panel .p-dropdown-empty-message {
+  padding: 10px 12px;
+  color: #9ca3af;
+}
+
+/* ================================
+   TOAST DE ÉXITO
+   ================================ */
+
+.p-toast-message-success {
+  background: var(--color-notification-success-container) !important;
+  border-left: 8px solid var(--color-notification-success-border) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem 1rem !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: 320px;
+  max-width: 400px;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Ocultar ícono de éxito */
+.p-toast-message-success .p-toast-message-icon {
+  display: none !important;
+}
+
+/* Ícono de cierre */
+.p-toast-message-success .p-toast-icon-close {
+  color: var(--color-notification-success-border) !important;
+  font-size: 1.2rem;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Título */
+.p-toast-message-success .p-toast-summary {
+  color: var(--color-notification-success-title) !important;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Cuerpo */
+.p-toast-message-success .p-toast-detail {
+  color: var(--color-notification-success-text) !important;
+  font-size: 0.9rem;
+}
+
+/* Ocultar ícono */
+.p-toast-message-error .p-toast-message-icon {
+  display: none !important;
+}
+
+/* ================================
+   TOAST DE INFO
+   ================================ */
+
+.p-toast-message-info {
+  background: var(--color-notification-info-container) !important;
+  border-left: 8px solid var(--color-notification-info-border) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem 1rem !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: 320px;
+  max-width: 400px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.p-toast-message-info .p-toast-message-icon {
+  display: none !important;
+}
+
+.p-toast-message-info .p-toast-icon-close {
+  color: var(--color-notification-info-border) !important;
+  font-size: 1.2rem;
+  top: 1rem;
+  right: 1rem;
+}
+
+.p-toast-message-info .p-toast-summary {
+  color: var(--color-notification-info-title) !important;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.p-toast-message-info .p-toast-detail {
+  color: var(--color-notification-info-text) !important;
+  font-size: 0.9rem;
+}
+
+/* ================================
+   TOAST DE ERROR
+   ================================ */
+
+.p-toast-message-error {
+  background: var(--color-notification-error-container) !important;
+  border-left: 8px solid var(--color-notification-error-border) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem 1rem !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: 320px;
+  max-width: 400px;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Ícono de cierre */
+.p-toast-message-error .p-toast-icon-close {
+  color: var(--color-notification-error-border) !important;
+  font-size: 1.2rem;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Título */
+.p-toast-message-error .p-toast-summary {
+  color: var(--color-notification-error-title) !important;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Cuerpo */
+.p-toast-message-error.p-toast-detail {
+  color: var(--color-notification-error-text) !important;
+  font-size: 0.9rem;
+}
+
+/* ================================
+   TOAST DE ADVERTENCIA
+   ================================ */
+
+.p-toast-message-warn {
+  background: var(--color-notification-security-container) !important;
+  border-left: 8px solid var(--color-notification-security-border) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem 1rem !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: 320px;
+  max-width: 400px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.p-toast-message-warn .p-toast-icon-close {
+  color: var(--color-notification-security-border) !important;
+  font-size: 1.2rem;
+  top: 1rem;
+  right: 1rem;
+}
+
+.p-toast-message-warn .p-toast-summary {
+  color: var(--color-notification-security-title) !important;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.p-toast-message-warn .p-toast-detail {
+  color: var(--color-notification-security-text) !important;
+  font-size: 0.9rem;
+}
+
+/* ================================
+   ESTILOS PARA LA P-DATATABLE
+   ================================ */
+
+.p-datatable {
+  font-family: var(--font-family-sans);
+  font-size: 0.875rem; /* text-sm */
+}
+
+.p-datatable .p-datatable-thead > tr:first-child > th:first-child {
+  border-top-left-radius: 10px;
+}
+.p-datatable .p-datatable-thead > tr:first-child > th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.p-datatable thead > tr > th {
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  background-color: var(--color-light);
+  color: white;
+  margin: 0 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover en botones de paginación */
+.p-paginator .p-paginator-pages .p-paginator-page:hover {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+/* 📑 Botones de navegación (<< < > >>) */
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+  color: #64748b; /* slate-500 */
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s;
+}
+
+.p-paginator .p-paginator-first:hover,
+.p-paginator .p-paginator-prev:hover,
+.p-paginator .p-paginator-next:hover,
+.p-paginator .p-paginator-last:hover {
+  background-color: #f1f5f9; /* slate-100 */
+  color: #1e293b; /* slate-800 */
+}
+
+/* 🎨 Estilo general del selector de filas */
+.p-paginator .p-paginator-rpp-dropdown {
+  background-color: #f9fafb; /* gris muy claro */
+  color: var(--color-primary); /* gris oscuro */
+  border: 1px solid #d1d5db; /* borde gris */
+  border-radius: 0.375rem; /* rounded-md */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+/* 🎯 Al pasar el mouse */
+.p-paginator .p-paginator-rpp-dropdown:hover {
+  background-color: #e5e7eb; /* gris más intenso */
+  border-color: #9ca3af;
+}
+
+.p-paginator .p-paginator-rpp-dropdown:target {
+  border-color: #111827;
+}

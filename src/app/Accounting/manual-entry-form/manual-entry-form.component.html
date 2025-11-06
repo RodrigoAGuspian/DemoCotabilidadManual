@@ -1,0 +1,153 @@
+<form [formGroup]="form" class="font-titillium">
+  <h1 class="section-title">Registro Contable Manual</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+    <div>
+      <label class="label-title">Fecha</label>
+      <p-calendar
+        formControlName="fecha"
+        dateFormat="yy-mm-dd"
+        styleClass="w-full dropdown-custom"
+      ></p-calendar>
+    </div>
+
+    <div>
+      <label class="label-title">Tipo de documento</label>
+      <p-dropdown
+        [options]="listaTiposDocumento"
+        formControlName="tipoDocumento"
+        placeholder="Seleccione"
+        styleClass="dropdown-custom w-full"
+        appendTo="self"
+      ></p-dropdown>
+    </div>
+
+    <div>
+      <label class="label-title">Número</label>
+      <input pInputText formControlName="numero" class="input-base w-full" />
+    </div>
+
+    <div>
+      <label class="label-title">Tercero principal</label>
+      <p-dropdown
+        [options]="listaTerceros"
+        formControlName="terceroPrincipal"
+        optionLabel="name"
+        placeholder="Seleccione"
+        appendTo="self"
+        styleClass="dropdown-custom w-full"
+      ></p-dropdown>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="section-title">Líneas de Registro</h2>
+
+      <div class="flex gap-3">
+        <p-button
+          label="Agregar línea"
+          (click)="agregarLinea()"
+          styleClass="p-button-secondary"
+        ></p-button>
+
+        <p-button
+          label="Guardar"
+          (click)="guardar()"
+          styleClass="p-button-secondary"
+        ></p-button>
+      </div>
+    </div>
+
+    <div class="overflow-x-auto overflow-y-visible">
+      <p-table
+        [value]="lineas.controls"
+        dataKey="id"
+        responsiveLayout="scroll"
+        class="shadow rounded-lg"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Cuenta</th>
+            <th>Tercero</th>
+            <th>Centro Costo</th>
+            <th>Débito</th>
+            <th>Crédito</th>
+            <th>Descripción</th>
+            <th></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-linea let-i="rowIndex">
+          <tr [formGroup]="linea">
+            <td>
+              <p-dropdown
+                [options]="listaCuentas"
+                formControlName="cuenta"
+                optionLabel="name"
+                styleClass="dropdown-custom"
+                appendTo="body"
+              ></p-dropdown>
+            </td>
+
+            <td>
+              <p-dropdown
+                [options]="listaTerceros"
+                formControlName="tercero"
+                optionLabel="name"
+                styleClass="dropdown-custom"
+                appendTo="body"
+              ></p-dropdown>
+            </td>
+
+            <td>
+              <p-dropdown
+                [options]="listaCentrosCosto"
+                formControlName="centroCosto"
+                optionLabel="name"
+                styleClass="dropdown-custom"
+                appendTo="body"
+              ></p-dropdown>
+            </td>
+
+            <td>
+              <p-inputNumber
+                formControlName="debito"
+                mode="currency"
+                currency="COP"
+                styleClass="w-full"
+              ></p-inputNumber>
+            </td>
+
+            <td>
+              <p-inputNumber
+                formControlName="credito"
+                mode="currency"
+                currency="COP"
+                styleClass="w-full"
+              ></p-inputNumber>
+            </td>
+
+            <td>
+              <input
+                pInputText
+                formControlName="descripcion"
+                class="input-base w-full"
+              />
+            </td>
+
+            <td>
+              <button
+                type="button"
+                class="text-red-500"
+                (click)="eliminarLinea(i)"
+              >
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</form>
