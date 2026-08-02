@@ -3,7 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@plugin "tailwindcss-primeui";
+
 
 /* Open Sans */
 @font-face {
@@ -62,7 +62,7 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-@theme {
+:root {
   /* Color | Principales */
   --color-primary: #000066;
   --color-light: #5056ac;
@@ -308,10 +308,10 @@ body {
 
 .select-option {
   @apply py-2 px-4 bg-white text-gray-800 cursor-pointer transition-all duration-150 rounded-md;
+}
 
-  &:hover {
-    @apply bg-blue-950 text-white;
-  }
+.select-option:hover {
+  @apply bg-blue-950 text-white;
 }
 
 ::ng-deep .ng-dropdown-panel {
@@ -351,16 +351,6 @@ body {
 
 .label-title {
   @apply block mb-1 text-sm font-sans text-blue-950;
-}
-
-/* --- Estilos para el panel desplegable y las opciones --- */
-
-/* Panel desplegable (la caja con las opciones) */
-.p-dropdown-panel {
-  background-color: var(--color-primary-100);
-  border: 1px solid #d1d5db;
-  border-radius: 0.375rem; /* rounded-md */
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-lg */
 }
 
 /* Panel desplegable (la caja con las opciones) */
